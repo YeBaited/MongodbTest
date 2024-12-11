@@ -6,12 +6,24 @@
 
     $options = [
         'tls' => true,
-        'tlsCAFile' => '/DigiCertTLSECCP384RootG5.crt.pem'
+        
      ];
 
     $client = new MongoDB\Client($uri, $options);
 
-    $collection = $client->selectCollection("Post", "Post1");
+    $db = $client->selectDatabase('Post');
 
-    echo $collection;
+    $test = $db->listCollections();
+
+    $collection = $client->selectCollection('Activity', 'Post');
+
+    $result = $collection->find([]);
+
+    foreach($result as $data){
+        echo $data['body'];
+    };
+
+
+
+    
 ?>
