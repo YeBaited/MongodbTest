@@ -82,7 +82,6 @@ function App() {
         }
 
         listOfpost[i]["epochDate"] = Number(now.toString().slice(0, -3)) - listOfpost[i]["epochDate"] + "s"
-        console.log("----")
       }
       
       SetPost(listOfpost)
@@ -126,12 +125,12 @@ function App() {
         {currentPost.map((children : any) =>
           <div className="w-3/6 sm:w-1/6 border border-black p-1 sm:mx-2 mt-2" key={children["epochDate"].toString()}>
             <h1 className="text-center font-mono text-sm sm:text-xl">{children["title"]}</h1>
-            <div className="grid grid-cols-3">
+            <div className="grid grid-cols-2">
 
               <h1 className="text-center font-mono text-sm">By: {children["name"]}</h1>
               <h1 className="text-center font-mono text-sm">{children["date"]}</h1>
-              <h1 className="text-center font-mono text-sm">{children["epochDate"]}</h1>
             </div>
+              <h1 className="text-center font-mono text-sm">{children["epochDate"]}</h1>
 
             <div className="w-full min-h-[5rem] border border-black">
               <h1 className="text-center font-mono">{children["body"]}</h1>
