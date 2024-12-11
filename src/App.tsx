@@ -98,7 +98,7 @@ function App() {
 
   return (
     <>
-      <h1 className='text-2xl'>Baited's Private Posting Site</h1>
+      <h1 className='text-2xl font-mono'>Baited's Private Posting Site</h1>
 
       <div className="justify-self-center sm:w-1/4">
         <h1 className="text-center text-lg font-semibold font-mono">Create a post</h1>
